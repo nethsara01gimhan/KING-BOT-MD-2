@@ -3431,7 +3431,7 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                            case 'kingbotinfo' :{
                            	timestampe = speed();
 latensie = speed() - timestampe
-Kingbotalive = `┌────────────────❖
+Kingbotinfo = `┌────────────────❖
 │👋ʜɪ ${pushname},
 │🔥  [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] 🔥
 │᪣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴡʜɪᴛᴇ ʜᴀᴄᴋᴇʀꜱ
@@ -3451,7 +3451,7 @@ Kingbotalive = `┌────────────────❖
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
-                            hydratedContentText: anu,
+                            hydratedContentText: Kingbotinfo,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./KINGMedia/logo.jpeg')},
                             hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
