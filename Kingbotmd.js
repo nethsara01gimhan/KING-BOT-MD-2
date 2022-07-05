@@ -3428,6 +3428,61 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
                     break
+                           case 'kingbotinfo' :{
+                           	timestampe = speed();
+latensie = speed() - timestampe
+Kingbotalive = `┌────────────────❖
+│👋ʜɪ ${pushname},
+│🔥  [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] 🔥
+│᪣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴡʜɪᴛᴇ ʜᴀᴄᴋᴇʀꜱ
+├────────────────❖
+│        *「 BOT INFO 」*
+│
+│🎲 BOT NAME : ${global.botname}
+│🎲 OWNER NAME : ${global.ownername}
+│🎲 OWNER NUMBER : ${global.owner}
+│⚙️ SPEED : ${latensie.toFixed(4)} miliseconds
+│⚙️ RUNTIME : ${runtime(process.uptime())}
+│🔥 HOST NAME : ${os.hostname()}
+│🔥 PLATFORM : ${os.platform()}
+│🔥 TOTAL USERS : ${Object.keys(global.db.data.users).length}
+└────────────────❖ `
+
+const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            hydratedContentText: anu,
+                            locationMessage: {
+                            jpegThumbnail: fs.readFileSync('./KINGMedia/logo.jpeg')},
+                            hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: '🔥 YOUTUBE 🔥',
+                                    url: `${myweb}`
+                                }
+                            }, {
+                            	urlButton: {
+                                displayText: '🔥 GITHUB 🔥',
+                                    url: `${sc}`
+                                }
+                            }, {
+ {
+                                quickReplyButton: {
+                                    displayText: '🎲 SYSTEM STATUS 🎲',
+                                    id: `${prefix}ping`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: '🇱🇰 OWNER 🇱🇰',
+                                    id: `${prefix}owner`
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat })
+                KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                }
+                    break
                      case 'bot': {
 kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧🤘] *❝𝗦𝗥𝗜 𝗟𝗔𝗡𝗞𝗔 𝗕𝗘𝗦𝗧 𝗪𝗔 𝗕𝗢𝗧❞*╹
 
