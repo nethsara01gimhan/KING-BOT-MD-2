@@ -3414,7 +3414,7 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
       
            let buttons = [
                {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1},
-               {buttonId: `kingbotinfo`, buttonText: {displayText: '〽 ️BOT INFO 〽️'}, type: 1},
+               {buttonId: `ehi`, buttonText: {displayText: '📁 EHI FILES 📁️'}, type: 1},
                {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1}
                 ]
                 
@@ -3428,67 +3428,13 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
                     break
-                           case 'kingbotinfo' :{
-                           	timestampe = speed();
-latensie = speed() - timestampe
-Kingbotinfo = `┌────────────────❖
-│👋ʜɪ ${pushname},
-│🔥  [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] 🔥
-│᪣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴡʜɪᴛᴇ ʜᴀᴄᴋᴇʀꜱ
-├────────────────❖
-│        *「 BOT INFO 」*
-│
-│🎲 BOT NAME : ${global.botname}
-│🎲 OWNER NAME : ${global.ownername}
-│🎲 OWNER NUMBER : ${global.owner}
-│⚙️ SPEED : ${latensie.toFixed(4)} miliseconds
-│⚙️ RUNTIME : ${runtime(process.uptime())}
-│🔥 HOST NAME : ${os.hostname()}
-│🔥 PLATFORM : ${os.platform()}
-│🔥 TOTAL USERS : ${Object.keys(global.db.data.users).length}
-└────────────────❖ `
 
-const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: Kingbotinfo,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./KINGMedia/logo.jpeg')},
-                            hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: '🔥 YOUTUBE 🔥',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                            	urlButton: {
-                                displayText: '🔥 GITHUB 🔥',
-                                    url: `${sc}`
-                                }
-                            }, {
- {
-                                quickReplyButton: {
-                                    displayText: '🎲 SYSTEM STATUS 🎲',
-                                    id: `${prefix}ping`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '🇱🇰 OWNER 🇱🇰',
-                                    id: `${prefix}owner`
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat })
-                KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
-                }
-                    break
                      case 'bot': {
 kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧🤘] *❝𝗦𝗥𝗜 𝗟𝗔𝗡𝗞𝗔 𝗕𝗘𝗦𝗧 𝗪𝗔 𝗕𝗢𝗧❞*╹
 
-🎲 𝗢𝗪𝗡𝗘𝗥     ➢ ᏔᎻᏆͲᎬ ᎻᎪᏟᏦᎬᎡՏ😈
-🎲 𝗟𝗔𝗡𝗚𝗨𝗔𝗚𝗘 ➢ ΝϴᎠᎬ.ᎫՏ
-
+🎲 𝙾𝚆𝙽𝙴𝚁     ➢ ШHłТΞ HΛϾКΞЯ
+🎲 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 ➢ NODE.js
+🎲 𝙲𝙾 𝙾𝚆𝙽𝙴𝚁 ➢ 𝙼𝚁.𝚃𝙸𝙼𝙰
 
 
       🍒 ✨️𝗔𝗗𝗠𝗜𝗡™✨️ 🍒
@@ -3499,15 +3445,9 @@ kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧�
 🔰✨️ ᴜᴄʜɪᴛʜᴀ ✨️ ᭄
       ◉ ᴇʜɪ ᴄʀᴇᴀᴛᴏʀ
       
+🔰✨️ ɪɴᴜᴋᴀ     ✨️ ᭄
 🔰✨️ ᴘʀᴀᴠᴇᴇɴ  ✨️ ᭄
-      ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
-      
-🔰✨️ ɪɴᴜᴋᴀ  ✨️ ᭄
-      ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
-      
 🔰✨️ ᴅɪʟꜱʜᴀɴ  ✨️ ᭄
-      ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
-      
 🔰✨️ ɴɪʟᴜᴘᴜʟ  ✨️ ᭄
       ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
       
