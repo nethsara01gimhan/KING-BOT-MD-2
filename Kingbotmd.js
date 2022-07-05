@@ -1,5 +1,5 @@
 require('./settings')
-const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
+const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType,MessageType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
@@ -7,6 +7,13 @@ const { exec, spawn, execSync } = require("child_process")
 const axios = require('axios')
 const path = require('path')
 const os = require('os')
+const simpleGit = require('simple-git');
+const git = simpleGit();
+const Config = require('../config');
+const exec = require('child_process').exec;
+const Heroku = require('heroku-client');
+const { PassThrough } = require('stream');
+const heroku = new Heroku({ token: `${Config.HEROKU.API_KEY}`)
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
 const speed = require('performance-now')
