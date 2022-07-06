@@ -3363,39 +3363,46 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                     break
 
                      case 'bot': {
-kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧🤘] *❝𝗦𝗥𝗜 𝗟𝗔𝗡𝗞𝗔 𝗕𝗘𝗦𝗧 𝗪𝗔 𝗕𝗢𝗧❞*╹
+kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧🤘] ╹
+╹❝𝗦𝗥𝗜 𝗟𝗔𝗡𝗞𝗔 𝗕𝗘𝗦𝗧 𝗪𝗔 𝗕𝗢𝗧❞╹
 
-🎲 𝙾𝚆𝙽𝙴𝚁     ➢ ШHłТΞ HΛϾКΞЯ
-🎲 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 ➢ NODE.js
-🎲 𝙲𝙾 𝙾𝚆𝙽𝙴𝚁 ➢ 𝙼𝚁.𝚃𝙸𝙼𝙰
+╭────────────────◉
+│🎲 𝙾𝚆𝙽𝙴𝚁     ➢ ШHłТΞ HΛϾКΞЯ
+│🎲 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 ➢ NODE.js
+│🎲 𝙲𝙾 𝙾𝚆𝙽𝙴𝚁 ➢ 𝙼𝚁.𝚃𝙸𝙼𝙰
+╰────────────────◉
 
 
-      🍒 ✨️𝗔𝗗𝗠𝗜𝗡™✨️ 🍒
-            
-🔰✨️ ᴍʀ ɴɪᴍᴀ  ✨️ ᭄
-      ◉ ᴛᴇxᴛ ᴇᴅɪᴛᴏʀ
-      
-🔰✨️ ᴜᴄʜɪᴛʜᴀ ✨️ ᭄
-      ◉ ᴇʜɪ ᴄʀᴇᴀᴛᴏʀ
-      
-🔰✨️ ɪɴᴜᴋᴀ     ✨️ ᭄
-🔰✨️ ᴘʀᴀᴠᴇᴇɴ  ✨️ ᭄
-🔰✨️ ᴅɪʟꜱʜᴀɴ  ✨️ ᭄
-🔰✨️ ɴɪʟᴜᴘᴜʟ  ✨️ ᭄
-      ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
-      
-🔰✨️ ᴍᴀʟɪᴛʜᴀ  ✨️ ᭄
-      ◉ ᴛᴇxᴛ ᴇᴅɪᴛᴏʀ
-      ◉ ɢʀᴀᴘɪᴄ ᴅᴇꜱɪɢɴᴇʀ
-      
-🔰✨️ ᴍʀ.ᴛɪᴍᴀ  ✨️ ᭄
-      ◉ ʙᴜɢ ᴀɴᴅ ᴇʀʀᴏʀ ꜰɪxᴇʀ
-      ◉ ᴀᴅᴍɪɴ ᴍᴀɴᴀɢᴇʀ
-      
+╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶💫
+│       🍒 ✨️𝗔𝗗𝗠𝗜𝗡™✨️ 🍒
+│🍁──────────────🍁
+│      
+│
+│🔰✨️ ᴍʀ ɴɪᴍᴀ  ✨️ ᭄
+│      ◉ ᴛᴇxᴛ ᴇᴅɪᴛᴏʀ
+│      
+│🔰✨️ ᴜᴄʜɪᴛʜᴀ ✨️ ᭄
+│      ◉ ᴇʜɪ ᴄʀᴇᴀᴛᴏʀ
+│      
+│🔰✨️ ɪɴᴜᴋᴀ     ✨️ ᭄
+│🔰✨️ ᴘʀᴀᴠᴇᴇɴ  ✨️ ᭄
+│🔰✨️ ᴅɪʟꜱʜᴀɴ  ✨️ ᭄
+│🔰✨️ ɴɪʟᴜᴘᴜʟ  ✨️ ᭄
+│     ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
+│      
+│🔰✨️ ᴍᴀʟɪᴛʜᴀ  ✨️ ᭄
+│      ◉ ᴛᴇxᴛ ᴇᴅɪᴛᴏʀ
+│      ◉ ɢʀᴀᴘɪᴄ ᴅᴇꜱɪɢɴᴇʀ
+│      
+│🔰✨️ ᴍʀ.ᴛɪᴍᴀ  ✨️ ᭄
+│      ◉ ʙᴜɢ ᴀɴᴅ ᴇʀʀᴏʀ ꜰɪxᴇʀ
+│      ◉ ᴀᴅᴍɪɴ ᴍᴀɴᴀɢᴇʀ
+╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶💫
 
    ┋ *⚜️ ꜰᴏʀ 24/7 ʜᴇʟᴘ ᴍꜱɢ ᴍᴇ ⚜️*┋
                      
-🔥𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗼𝗿 𝗰𝗵𝗼𝗼𝘀𝗶𝗻𝗴 ❝𝗞𝗜𝗡𝗚 𝗕𝗢𝗧❞🔥`
+  🍁𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗼𝗿 𝗰𝗵𝗼𝗼𝘀𝗶𝗻𝗴🍁
+           🔥❝𝗞𝗜𝗡𝗚 𝗕𝗢𝗧❞🔥`
 
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
@@ -3483,6 +3490,12 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
                 break
+           case 'verify': {
+	         	const lel = [`[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFIRMED 2022 </> :)`, `[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFIRMED MD </> :)`, `[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFIRMED ✓☆ </> :)`]
+	    		const verifyking = lel[Math.floor(Math.random() * lel.length)]
+KingmdWH.sendMessage(from, { text: `${verifyking}` }, { quoted: m })
+
+                      break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
