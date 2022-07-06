@@ -2043,29 +2043,29 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[0]
+                let kingbotsearch = search.videos[0]
                 let buttons = [
-                    {buttonId: `hsong ${anu.url}`, buttonText: {displayText: '🔥 HIGH QUALITY 🔥'}, type: 1},
-                    {buttonId: `msong  ${anu.url}`, buttonText: {displayText: '🎲 MEDIUM QUALITY 🎲'}, type: 1}
+                    {buttonId: `hsong ${kingbotsearch.url}`, buttonText: {displayText: '🔥 HIGH QUALITY 🔥'}, type: 1},
+                    {buttonId: `msong  ${kingbotsearch.url}`, buttonText: {displayText: '🎲 MEDIUM QUALITY 🎲'}, type: 1},
+                    {buttonId: `id3`, buttonText: {displayText: '▣ ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ ▣'+'\n\n\n🍃 Description : ${kingbotsearch.description}\n🍃 Author : ${kingbotsearch.author.name}\n🍃 Channel : ${kingbotsearch.author.url}'}, type: 1}
                 ]
                 let buttonMessage = {
-                    image: { url: anu.thumbnail },
+                    image: { url: kingbotsearch.thumbnail },
                     caption: `╭───────────────╮
-│  🔥 ᴋɪɴɢ ʙᴏᴛ - ᴍᴅ ᴠᴇʀꜱɪᴏɴ   🔥 │
+│    🔥 ᴋɪɴɢ ʙᴏᴛ - ᴍᴅ ᴠᴇʀꜱɪᴏɴ 🔥 │
 ╰───────────────╯
 
     *📥 𝚂𝙾𝙽𝙶 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁 📥*
    
-💠 Title : ${anu.title}
-💠 Description : ${anu.description}
-💠 Ext : Search
-💠 ID : ${anu.videoId}
-💠 Duration : ${anu.timestamp}
-💠 Viewes : ${anu.views}
-💠 Uploaded On : ${anu.ago}
-💠 Author : ${anu.author.name}
-💠 Channel : ${anu.author.url}
-💠 Url : ${anu.url}`,
+╭╶╶╶╶╶╶╶╶╶╶╶╶◉
+│💠 Title : ${kingbotsearch.title}
+│💠 Ext : Search
+│💠 ID : ${kingbotsearch.videoId}
+│💠 Duration : ${kingbotsearch.timestamp}
+│💠 Viewes : ${kingbotsearch.views}
+│💠 Uploaded On : ${kingbotsearch.ago}
+│💠 Url : ${kingbotsearch.url}
+╰╶╶╶╶╶╶╶╶╶╶╶╶◉`,
                     footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
                     buttons: buttons,
                     headerType: 4
