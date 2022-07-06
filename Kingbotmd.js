@@ -2109,16 +2109,27 @@ break
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-                             case 'hsong':  {
-                let { yta } = require('./lib/y2mate')
+                             case 'hsong':{
+                et { yta } = require('./lib/y2mate')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                KingmdWH.sendImage(m.chat, media.thumb, `🇱🇰⃞ Title : ${media.title}\n🇱🇰⃞ File Size : ${media.filesizeF}\n🇱🇰⃞ Url : ${isUrl(text)}\n🇱🇰⃞ Ext : MP3\n🇱🇰⃞ Resolution : ${args[1] || '320kbps'}`, m)
+                let buttons = [
+                    {buttonId: `bug song thank you!`, buttonText: {displayText: '🔥 THANK YOU 🤘'+'\n\n\nʏᴏᴜ ᴀʀᴇ ᴡᴇʟᴄᴏᴍᴇ!\n\n🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁'}, type: 1},
+                    {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: media.thumb },
+                    caption: `▣ Title : ${media.title}\n▣ File Size : ${media.filesizeF}\n▣ Url : ${isUrl(text)}\n▣ Ext : MP3\n▣ Resolution : ${args[1] || '320kbps'}`,
+                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
                 KingmdWH.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
-                       break
+            break
 	    case 'msong':{
                 let { yta } = require('./lib/y2mate')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
@@ -3290,13 +3301,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'owner': case 'creator': {
                 KingmdWH.sendContact(m.chat, global.owner, m)
             }
-            break
-case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
-					reply(mess.wait)
-					axios.get(`https://api.waifu.pics/sfw/${command}`)
-					.then(({data}) => {
-						KingmdWH.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
-					})
 					break
 				case 'waifu': case 'loli':
 					reply(mess.wait)
@@ -3375,9 +3379,9 @@ kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧�
 ╰────────────────◉
 
 
-╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶💫
+╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶💫
 │       🍒 ✨️𝗔𝗗𝗠𝗜𝗡™✨️ 🍒
-│🍁──────────────🍁
+│🍁─────────────🍁
 │      
 │
 │🔰✨️ ᴍʀ ɴɪᴍᴀ  ✨️ ᭄
@@ -3399,7 +3403,7 @@ kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧�
 │🔰✨️ ᴍʀ.ᴛɪᴍᴀ  ✨️ ᭄
 │      ◉ ʙᴜɢ ᴀɴᴅ ᴇʀʀᴏʀ ꜰɪxᴇʀ
 │      ◉ ᴀᴅᴍɪɴ ᴍᴀɴᴀɢᴇʀ
-╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶💫
+╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶💫
 
    ┋ *⚜️ ꜰᴏʀ 24/7 ʜᴇʟᴘ ᴍꜱɢ ᴍᴇ ⚜️*┋
                      
@@ -3506,7 +3510,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                     footerText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     listType: "SINGLE_SELECT",
                     sections: [{
-                                "title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                                "title": "━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ꜱʜᴏʀᴛ ᴍᴇɴᴜ",
@@ -3516,7 +3520,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+								"title": "━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ᴍᴀɪɴ ᴍᴇɴᴜ",
@@ -3526,7 +3530,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+								"title": "━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ᴀʟʟ ᴍᴇɴᴜ",
@@ -3562,11 +3566,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 											"title": "ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Random Features",
 										"rowId": `${prefix}randommenu`
-										},
-										{
-											"title": "ꜰᴜɴ ᴍᴇɴᴜ",
-										"description": "Displays The List Of Fun Features",
-										"rowId": `${prefix}funmenu`
 										},
 										{
 											"title": "ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ",
@@ -3961,80 +3960,6 @@ case 'allmenu': {
 ┃╠${prefix}coffee
 ┃╠${prefix}animequote (indo)
 ┃╠${prefix}couplepp
-┃╠═✪「 RANDOM ANIME 」☯︎
-┃╠${prefix}loli
-┃╠${prefix}bully
-┃╠${prefix}cuddle
-┃╠${prefix}cry
-┃╠${prefix}hug
-┃╠${prefix}awoo
-┃╠${prefix}kiss
-┃╠${prefix}lick
-┃╠${prefix}pat
-┃╠${prefix}smug
-┃╠${prefix}bonk
-┃╠${prefix}yeet
-┃╠${prefix}blush
-┃╠${prefix}smile
-┃╠${prefix}wave
-┃╠${prefix}highfive
-┃╠${prefix}handhold
-┃╠${prefix}nom
-┃╠${prefix}glomp
-┃╠${prefix}bite
-┃╠${prefix}slap
-┃╠${prefix}kill
-┃╠${prefix}happy
-┃╠${prefix}wink
-┃╠${prefix}poke
-┃╠${prefix}dance
-┃╠${prefix}cringe
-┃╠══✪「 FUN 」 ☯︎
-┃╠ ${prefix}how [text
-┃╠ ${prefix}when [text]
-┃╠ ${prefix}is [text]
-┃╠ ${prefix}what [text]
-┃╠ ${prefix}can [text]
-┃╠ ${prefix}rate [text]
-┃╠ ${prefix}wangy [text]
-┃╠ ${prefix}beautifulcheck [tag]
-┃╠ ${prefix}awesomecheck [tag]
-┃╠ ${prefix}prettycheck [tag]
-┃╠ ${prefix}lesbiancheck [tag]
-┃╠ ${prefix}gaycheck [tag]
-┃╠ ${prefix}cutecheck [tag]
-┃╠ ${prefix}uglycheck [tag]
-┃╠ ${prefix}hornycheck [tag]
-┃╠ ${prefix}charactercheck [tag]
-┃╠ ${prefix}lovelycheck [tag]
-┃╠ ${prefix}couple
-┃╠ ${prefix}mysoulmate
-┃╠ ${prefix}hot
-┃╠ ${prefix}sexy
-┃╠ ${prefix}kind
-┃╠ ${prefix}idiot
-┃╠ ${prefix}handsome
-┃╠ ${prefix}beautiful
-┃╠ ${prefix}cute
-┃╠ ${prefix}pretty
-┃╠ ${prefix}lesbian
-┃╠ ${prefix}noob
-┃╠ ${prefix}bastard
-┃╠ ${prefix}foolish
-┃╠ ${prefix}nerd
-┃╠ ${prefix}asshole
-┃╠ ${prefix}gay
-┃╠ ${prefix}smart
-┃╠ ${prefix}stubble
-┃╠ ${prefix}dog
-┃╠ ${prefix}horny
-┃╠ ${prefix}cunt
-┃╠ ${prefix}wibu
-┃╠ ${prefix}tictactoe
-┃╠ ${prefix}delttt
-┃╠ ${prefix}guess [option]
-┃╠ ${prefix}math [mode]
-┃╠ ${prefix}suitpvp [tag]
 ┃╠═══✪「 CONVERTER 」 ☯︎
 ┃╠ ${prefix}toimage [reply stick]
 ┃╠ ${prefix}sticker [reply img|gif]
@@ -4211,60 +4136,6 @@ await KingmdWH.send5ButImg(from, `` + '' + ' ', `
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
 break
-
-case 'funmenu':
-var unicorn = await getBuffer(picak+'Fun Menu')
-await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═✪「 FUN 」	        
-┃╠ ${prefix}how [text
-┃╠ ${prefix}when [text]
-┃╠ ${prefix}is [text]
-┃╠ ${prefix}what [text]
-┃╠ ${prefix}can [text]
-┃╠ ${prefix}rate [text]
-┃╠ ${prefix}wangy [text]
-┃╠ ${prefix}beautifulcheck [tag]
-┃╠ ${prefix}awesomecheck [tag]
-┃╠ ${prefix}prettycheck [tag]
-┃╠ ${prefix}lesbiancheck [tag]
-┃╠ ${prefix}gaycheck [tag]
-┃╠ ${prefix}cutecheck [tag]
-┃╠ ${prefix}uglycheck [tag]
-┃╠ ${prefix}hornycheck [tag]
-┃╠ ${prefix}charactercheck [tag]
-┃╠ ${prefix}lovelycheck [tag]
-┃╠ ${prefix}couple
-┃╠ ${prefix}mysoulmate
-┃╠ ${prefix}hot
-┃╠ ${prefix}sexy
-┃╠ ${prefix}kind
-┃╠ ${prefix}handsome
-┃╠ ${prefix}beautiful
-┃╠ ${prefix}cute
-┃╠ ${prefix}pretty
-┃╠ ${prefix}lesbian
-┃╠ ${prefix}noob
-┃╠ ${prefix}bastard
-┃╠ ${prefix}foolish
-┃╠ ${prefix}nerd
-┃╠ ${prefix}asshole
-┃╠ ${prefix}gay
-┃╠ ${prefix}smart
-┃╠ ${prefix}stubble
-┃╠ ${prefix}dog
-┃╠ ${prefix}horny
-┃╠ ${prefix}cunt
-┃╠ ${prefix}wibu
-┃╠ ${prefix}tictactoe
-┃╠ ${prefix}delttt
-┃╠ ${prefix}guess [option]
-┃╠ ${prefix}math [mode]
-┃╠ ${prefix}suitpvp [tag]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
-break
-
 case 'ownermenu':
 var unicorn = await getBuffer(picak+'Owner Menu')
 await KingmdWH.send5ButImg(from, `` + '' + ' ', `
