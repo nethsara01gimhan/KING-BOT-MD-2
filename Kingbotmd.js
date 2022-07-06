@@ -2047,7 +2047,7 @@ break
                 let buttons = [
                     {buttonId: `hsong ${kingbotsearch.url}`, buttonText: {displayText: '🔥 HIGH QUALITY 🔥'}, type: 1},
                     {buttonId: `msong  ${kingbotsearch.url}`, buttonText: {displayText: '🎲 MEDIUM QUALITY 🎲'}, type: 1},
-                    {buttonId: `id3`, buttonText: {displayText: '🍁 ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ 🍁'+`\n\n\n▣ ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ : ${kingbotsearch.description}\n▣ ᴀᴜᴛʜᴏʀ : ${kingbotsearch.author.name}\n▣ ᴄʜᴀɴɴᴇʟ : ${kingbotsearch.author.url}`}, type: 1}
+                    {buttonId: `id3`, buttonText: {displayText: '🍁 ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ 🍁'+'\n\n\n▣ ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ ➢ '+`${kingbotsearch.description}`+'\n▣ ᴀᴜᴛʜᴏʀ ➢ '+`${kingbotsearch.author.name}`+'\n▣ ᴄʜᴀɴɴᴇʟ ➢ '+`${kingbotsearch.author.url}`}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: kingbotsearch.thumbnail },
@@ -2055,7 +2055,7 @@ break
 │    🔥 ᴋɪɴɢ ʙᴏᴛ - ᴍᴅ ᴠᴇʀꜱɪᴏɴ 🔥 │
 ╰───────────────╯
 
-    *📥 𝚂𝙾𝙽𝙶 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁 📥*
+      *📥 𝚂𝙾𝙽𝙶 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁 📥*
    
 ╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉
 │▣ ᴛɪᴛʟᴇ ➢ ${kingbotsearch.title}
