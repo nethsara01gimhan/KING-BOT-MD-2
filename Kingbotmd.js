@@ -2065,6 +2065,8 @@ break
 │▣ ᴠɪᴇᴡᴇꜱ ➢ ${kingbotsearch.views}
 │▣ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ➢ ${kingbotsearch.ago}
 │▣ ᴜʀʟ ➢ ${kingbotsearch.url}
+│
+│🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁
 ╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉`,
                     footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
                     buttons: buttons,
@@ -2107,16 +2109,27 @@ break
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-                             case 'hsong':  {
-                let { yta } = require('./lib/y2mate')
+                             case 'hsong':{
+                et { yta } = require('./lib/y2mate')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                KingmdWH.sendImage(m.chat, media.thumb, `🇱🇰⃞ Title : ${media.title}\n🇱🇰⃞ File Size : ${media.filesizeF}\n🇱🇰⃞ Url : ${isUrl(text)}\n🇱🇰⃞ Ext : MP3\n🇱🇰⃞ Resolution : ${args[1] || '320kbps'}`, m)
+                let buttons = [
+                    {buttonId: `bug song thank you!`, buttonText: {displayText: '🔥 THANK YOU 🤘'+'\n\n\nʏᴏᴜ ᴀʀᴇ ᴡᴇʟᴄᴏᴍᴇ!\n\n🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁'}, type: 1},
+                    {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: media.thumb },
+                    caption: `▣ Title : ${media.title}\n▣ File Size : ${media.filesizeF}\n▣ Url : ${isUrl(text)}\n▣ Ext : MP3\n▣ Resolution : ${args[1] || '320kbps'}\n\n🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁`,
+                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
                 KingmdWH.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
-                       break
+            break
 	    case 'msong':{
                 let { yta } = require('./lib/y2mate')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
@@ -3491,10 +3504,8 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }
                 break
            case 'verify': {
-	         	const lel = [`[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFIRMED 2022 </> :)`, `[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFIRMED MD </> :)`, `[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFIRMED ✓☆ </> :)`]
-	    		const verifyking = lel[Math.floor(Math.random() * lel.length)]
-KingmdWH.sendMessage(from, { text: `${verifyking}` }, { quoted: m })
-
+	         	
+	         	reply('[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFERMED 2022 |>')
                       break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3505,7 +3516,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                     footerText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     listType: "SINGLE_SELECT",
                     sections: [{
-                                "title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                                "title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ꜱʜᴏʀᴛ ᴍᴇɴᴜ",
@@ -3515,7 +3526,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "━━━━━━━[Main Features]━",
+								"title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ᴍᴀɪɴ ᴍᴇɴᴜ",
@@ -3525,7 +3536,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "━━━━━━━[Bot Features]━",
+								"title": "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ᴀʟʟ ᴍᴇɴᴜ",
