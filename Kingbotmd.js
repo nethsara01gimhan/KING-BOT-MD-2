@@ -2047,7 +2047,7 @@ break
                 let buttons = [
                     {buttonId: `hsong ${kingbotsearch.url}`, buttonText: {displayText: '🔥 HIGH QUALITY 🔥'}, type: 1},
                     {buttonId: `msong  ${kingbotsearch.url}`, buttonText: {displayText: '🎲 MEDIUM QUALITY 🎲'}, type: 1},
-                    {buttonId: `id3`, buttonText: {displayText: '▣ ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ ▣'+`🍃 Description : ${kingbotsearch.description}\n🍃 Author : ${kingbotsearch.author.name}\n🍃 Channel : ${kingbotsearch.author.url}`}, type: 1}
+                    {buttonId: `id3`, buttonText: {displayText: '🍁 ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ 🍁'+`\n\n\n▣ ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ : ${kingbotsearch.description}\n▣ ᴀᴜᴛʜᴏʀ : ${kingbotsearch.author.name}\n▣ ᴄʜᴀɴɴᴇʟ : ${kingbotsearch.author.url}`}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: kingbotsearch.thumbnail },
@@ -2057,15 +2057,15 @@ break
 
     *📥 𝚂𝙾𝙽𝙶 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁 📥*
    
-╭╶╶╶╶╶╶╶╶╶╶╶╶◉
-│💠 Title : ${kingbotsearch.title}
-│💠 Ext : Search
-│💠 ID : ${kingbotsearch.videoId}
-│💠 Duration : ${kingbotsearch.timestamp}
-│💠 Viewes : ${kingbotsearch.views}
-│💠 Uploaded On : ${kingbotsearch.ago}
-│💠 Url : ${kingbotsearch.url}
-╰╶╶╶╶╶╶╶╶╶╶╶╶◉`,
+╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉
+│▣ ᴛɪᴛʟᴇ ➢ ${kingbotsearch.title}
+│▣ ᴇxᴛ ➢ Search
+│▣ ɪᴅ ➢ ${kingbotsearch.videoId}
+│▣ ᴅᴜʀᴀᴛɪᴏɴ ➢ ${kingbotsearch.timestamp}
+│▣ ᴠɪᴇᴡᴇꜱ ➢ ${kingbotsearch.views}
+│▣ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ➢ ${kingbotsearch.ago}
+│▣ ᴜʀʟ ➢ ${kingbotsearch.url}
+╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉`,
                     footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
                     buttons: buttons,
                     headerType: 4
