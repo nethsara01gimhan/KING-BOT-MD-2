@@ -2047,7 +2047,7 @@ break
                 let buttons = [
                     {buttonId: `hsong ${kingbotsearch.url}`, buttonText: {displayText: '🔥 HIGH QUALITY 🔥'}, type: 1},
                     {buttonId: `msong  ${kingbotsearch.url}`, buttonText: {displayText: '🎲 MEDIUM QUALITY 🎲'}, type: 1},
-                    {buttonId: `id3`, buttonText: {displayText: '▣ ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ ▣'+'\n\n\n🍃 Description : ${kingbotsearch.description}\n🍃 Author : ${kingbotsearch.author.name}\n🍃 Channel : ${kingbotsearch.author.url}'}, type: 1}
+                    {buttonId: `id3`, buttonText: {displayText: '▣ ᴍᴏʀᴇ ᴅᴇᴀᴛᴀɪʟꜱ ▣'+`🍃 Description : ${kingbotsearch.description}\n🍃 Author : ${kingbotsearch.author.name}\n🍃 Channel : ${kingbotsearch.author.url}`}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: kingbotsearch.thumbnail },
