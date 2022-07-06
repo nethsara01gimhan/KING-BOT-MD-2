@@ -1970,7 +1970,7 @@ break
                 for (let i of search.all) {
                     teks += `🔥 No : ${no++}\n🔥 Type : ${i.type}\n🔥 Video ID : ${i.videoId}\n🔥 Title : ${i.title}\n🔥 Views : ${i.views}\n🔥 Duration : ${i.timestamp}\n🔥 Uploaded On : ${i.ago}\n🔥 Author : ${i.author.name}\n🔥 Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                KingmdWH.sendMessage(m.chat, { image: { fs.readFileSync('./KINGMedia/logo.jpeg') },  caption: teks }, { quoted: m })
+                KingmdWH.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
         case 'google': {
@@ -3657,32 +3657,22 @@ Kingbotehimenu = `🔥ᏦᏆΝᏀ ᏴϴͲ ᎬᎻᏆ ᏟϴᏞᏞᎬᏟͲᏆϴΝ�
 
 
    🔰 ᴀɴʏ ᴡʜᴀᴛꜱᴀᴘᴘ  - .wehi
-
    🔰 ᴀɴʏ ꜰᴀᴄᴇʙᴏᴏᴋ - .fehi
-
    🔰 ᴀɴʏ ᴢᴏᴏᴍ - .zehi
-
    🔰 ᴅ - ᴢᴏᴏᴍ - .dzehi
-
    🔰 ᴀɴʏ ʏᴏᴜᴛᴜʙᴇ - .yehi
-
    🔰 ᴀɴʏ ɴᴇᴛꜰʟɪx - .nfehi
-
    🔰 ᴀɴʏ ɪᴍᴏ - .iehi
 
 
    🎲 𝙷𝚄𝚃𝙲𝙷 0 - .h0ehi
-
    🎲 𝙳𝙸𝙰𝙻𝙾𝙶 0 - .d0ehi
-
    🎲 𝙰𝙸𝚁𝚃𝙴𝙻 0 - .a0ehi
-
    🎲 𝙼𝙾𝙱𝙸𝚃𝙴𝙻 0 - .m0ehi
 
 
    💠 ᎪᏞᏞ ᎬᎻᏆ ҒᏆᏞᎬՏ - .allehi
-
-
+   
 
 ◈ ᴇʜɪ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ → 𝐔𝐂𝐇𝐈𝐓𝐇𝐀
 
@@ -3716,11 +3706,8 @@ kingbotehiapkmenu = `🔥ᏦᏆΝᏀ ᏴϴͲ ᎬᎻᏆ ᎪᏢᏦ ᏟϴᏞᏞᎬ�
 
 
 🔹 𝙷𝚃𝚃𝙿 𝙸𝙽𝙹𝙴𝙲𝚃𝙾𝚁 - .httpapk
-
 🔹 𝙷𝚃𝚃𝙿 𝙸𝙽𝙹𝙴𝙲𝚃𝙾𝚁 𝙻𝙸𝚃𝙴 - .httplapk
-
 🔹 𝚂𝙾𝙲𝙺𝚂 𝙸𝙽𝙹𝙴𝙲𝚃𝙾𝚁 - .sksapk
-
 🔹 𝚃𝙻𝚂 𝙸𝙽𝙹𝙴𝙲𝚃𝙾𝚁 - .tslapk
 
 
