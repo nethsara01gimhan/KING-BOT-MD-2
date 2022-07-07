@@ -1569,8 +1569,8 @@ break
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 
                 let buttons = [
-                    {buttonId: `tes1t`, buttonText: {displayText: 'TEST'}, type: 1},
-                    {buttonId: `tes2t`, buttonText: {displayText: 'TEST'}, type: 1}
+                    {buttonId: `test`, buttonText: {displayText: 'TEST'}, type: 1},
+                    {buttonId: `test`, buttonText: {displayText: 'TEST'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: media.thumb },
@@ -1589,6 +1589,7 @@ break
                     headerType: 4
                 }
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
                 KingmdWH.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
                        break
