@@ -1490,7 +1490,6 @@ break
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-                 break
                  case 'song':{
                 if (!text) return reply(`Example : .song lelena`)
                 let yts = require("yt-search")
