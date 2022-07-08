@@ -70,9 +70,7 @@ async function startKingmdWH() {
     }
     })
     
-    console.log(chalk.blueBright.italic('PLEASE WAIT➢'))
-    console.log(chalk.blueBright.italic('🎲LOGIN TO YOUR ACCOUNT🇱🇰'))
-    
+
     KingmdWH.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
@@ -124,7 +122,9 @@ async function startKingmdWH() {
                 } catch {
                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
-
+    console.log(chalk.blueBright.italic('PLEASE WAIT➢'))
+    console.log(chalk.blueBright.italic('🎲LOGIN TO YOUR ACCOUNT🇱🇰'))
+    
                 //Get Profile Picture Group\\
                 try {
                     ppgroup = await KingmdWH.profilePictureUrl(anu.id, 'image')
@@ -140,17 +140,20 @@ Kingbotwelcome = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${e
 
 Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
-                    KingmdWH.sendMessage(anu.id, { image: Kingbotwelcome, contextInfo: { mentionedJid: [num] }, caption: `👋හායි  @${num.split("@")[0]},
-⭐ Welcome To ${metadata.subject}
-
-⭐ Description: ${metadata.desc}
-
-💫 සාදරයෙන් පිලිගන්නවා group එකට🥰`} )
-                } else if (anu.action == 'remove') {
-                    KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐ @${num.split("@")[0]} Left ${metadata.subject}
-
-🍁බායි බායි ඒනම්🍁
-💫යන්නකො යන්නකෝ💫` })
+                    let buttons = [
+               {buttonId: `command`, buttonText: {displayText: 'MENU'}, type: 1},
+               {buttonId: `welcome`, buttonText: {displayText: 'WELCOME BRO'}, type: 1}
+                ]
+                
+                let buttonMessage = {
+                    image: Kingbotwelcome,
+                    caption: `🙋‍♂️හායි  @${num.split("@")[0]},\n\n💫 සාදරයෙන් පිලිගන්නවා *${metadata.subject}* group එකට🥰\n\n🍁 Description ➢ ${metadata.desc}\n\n`,
+                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
                 }
             }
         } catch (err) {
