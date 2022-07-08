@@ -2499,7 +2499,7 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
       
            let buttons = [
                {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1},
-               {buttonId: `ehi`, buttonText: {displayText: '📁 EHI FILES 📁️'}, type: 1},
+               {buttonId: `shortmenu`, buttonText: {displayText: '🍁 SHORT MENU 🍁️'}, type: 1},
                {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1}
                 ]
                 
@@ -2650,13 +2650,13 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
-                    title: `👋ʜɪ ᴛʜᴇʀᴇ ${pushname},`,
-                    description: `🔥ᴘʟᴇᴀꜱᴇ ᴄʜᴏᴏꜱᴇ ᴛʜᴇ ᴍᴇɴᴜ🔥\n\n*🎲 THIS IS [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] MENU LIST*\n*💹 YOU CAN DO LOT OF WORKS WITH ME AND DON'T USE BOT FOR BAD THINKS !🤘*\n`,
+                    title: `┏━━━━━━━━━━━━━`,
+                    description: `┣👋ʜɪ ᴅᴇᴀʀ ${pushname},\n┃\n┣ 𝙸 𝙰𝙼 [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n┣🎭𝙰 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝚄𝚂𝙴𝚁 𝙱𝙾𝚃🎭\!┃\n┣ 🍁ᴄʜᴏᴏꜱᴇ ᴛʜᴇ ᴍᴇɴᴜ🍁\n┗━━━━━━━━━━━━━\n\n*🎲 THIS IS [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] MENU LIST*\n`,
                     buttonText: "ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ꜱᴇʟᴇᴄᴛ ᴍᴇɴᴜ",
                     footerText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     listType: "SINGLE_SELECT",
                     sections: [{
-                                "title": "━━━━━━━━━━━━━━━━━━━━━━━",
+                                "title": "━━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ꜱʜᴏʀᴛ ᴍᴇɴᴜ",
@@ -2666,7 +2666,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "━━━━━━━━━━━━━━━━━━━━━━━",
+								"title": "━━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ᴍᴀɪɴ ᴍᴇɴᴜ",
@@ -2676,7 +2676,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "━━━━━━━━━━━━━━━━━━━━━━━",
+								"title": "━━━━━━━━━━━━━━━━━━━━━━━━",
 								"rows": [
 									{
 										"title": "ᴀʟʟ ᴍᴇɴᴜ",
@@ -2835,10 +2835,10 @@ Kingbotehimenu = `🔥ᏦᏆΝᏀ ᏴϴͲ ᎬᎻᏆ ᏟϴᏞᏞᎬᏟͲᏆϴΝ�
 
 🔥 ᏢᎾᎳᎬᏒᎬᎠ bᎽ [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] 🔥`
 
-           let buttons = [
-               {buttonId: `kingehiuse`, buttonText: {displayText: '🕹️ ️HOW TO USE 🕹️'}, type: 1},
-               {buttonId: `eapk`, buttonText: {displayText: '📁 GET INJECTOR APPS 📁'}, type: 1},
-               {buttonId: `alive`, buttonText: {displayText: '🎲 BOT STATUS 🎲️'}, type: 1}
+        let buttons = [
+             {buttonId: `kingehiuse`, buttonText: {displayText: '🕹️ ️HOW TO USE 🕹️'}, type: 1},
+             {buttonId: `eapk`, buttonText: {displayText: '📁 GET INJECTOR APPS 📁'}, type: 1},
+             {buttonId: `alive`, buttonText: {displayText: '🎲 BOT STATUS 🎲️'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: fs.readFileSync('./src/ehilogo.jpg'),
@@ -2953,22 +2953,30 @@ Ex - ( Dialog zoom *Rs- 165  )
            case 'shortmenu': {
 
 kingbotshortmenu = `
-[✿❯────「✿」────❮✿]
-            𝙺𝙸𝙽𝙶𝙱𝙾𝚃 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂
-[✿❯────「✿」────❮✿]
+🎭─────「⚙」─────🎭
+          ✨ ᴋɪɴɢ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅꜱ✨
+🎭─────「⚙」─────🎭
 
-┏━━🍃ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴍᴅ🍃━📥
+
+┏━━━━━━━━━━━━━📥
+┣━🍁 ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴍᴅ 🍁━┫
+┣━━━━━━━━━━━━━
 ┃
 ┃◈ .ꜱᴏɴɢ {ꜱᴏɴɢ ɴᴀᴍᴇ}
 ┃◈ .ᴠɪᴅᴇᴏ {ᴠɪᴅᴇᴏ ɴᴀᴍᴇ}
 ┗━━━━━━━━━━━━━📥
 
-┏━━━ʟ━🍃ꜱᴇᴀʀᴄʜ ᴄᴍᴅ🍃━🔍
+┏━━━━━━━━━━━━━🔍
+┣━━🍁 ꜱᴇᴀʀᴄʜ ᴄᴍᴅ 🍁━━┫
+┣━━━━━━━━━━━━━
 ┃
 ┃◈ .ʏᴛ {ꜱᴇᴀʀᴄʜ ɴᴀᴍᴇ}
+┃◈ .ɪᴍɢ {ᴘʜᴏᴛᴏ ɴᴀᴍᴇ}
 ┗━━━━━━━━━━━━━🔎
 
-┏━━━━🍃ɢʀᴏᴜᴘ ᴄᴍᴅ🍃━‍🪀
+┏━━━━━━━━━━━━━‍🪀
+┣━━🍁 ɢʀᴏᴜᴘ ᴄᴍᴅ 🍁━━┫
+┣━━━━━━━━━━━━━
 ┃
 ┃◈ .ᴋɪᴄᴋ {ʀᴇᴘʟʏ}
 ┃◈ .ᴀᴅᴅ {ɴᴜᴍʙᴇʀ}
@@ -2977,18 +2985,22 @@ kingbotshortmenu = `
 ┃◈ .ᴅᴇᴍᴏᴛᴇ {ʀᴇᴘʟʏ}
 ┗━━━━━━━━━━━━━🪀
 
-┏━━━🍃ᴄᴏɴᴠᴇʀᴛ ᴄᴍᴅ🍃━‍🛠️
+┏━━━━━━━━━━━━━‍🛠️
+┣━━🍁 ᴄᴏɴᴠᴇʀᴛ ᴄᴍᴅ 🍁━┫
+┣━━━━━━━━━━━━━
 ┃
 ┃◈ .ꜱᴛɪᴄᴋᴇʀ {ʀᴇᴘʟʏ ᴘʜᴏᴛᴏ}
 ┗━━━━━━━━━━━━━🛠️
 
-┏━━━━🍃ᴏᴛʜᴇʀ ᴄᴍᴅ🍃━‍⛦
+┏━━━━━━━━━━━━━‍⛦
+┣━━🍁 ᴏᴛʜᴇʀ ᴄᴍᴅ 🍁━━┫
+┣━━━━━━━━━━━━━
 ┃
 ┃◈ .ᴀʟɪᴠᴇ
 ┗━━━━━━━━━━━━━⛦`
 
          let buttons = [
-             {buttonId: `command`, buttonText: {displayText: '🍃 BACK TO MENU 🍃'}, type: 1},
+             {buttonId: `command`, buttonText: {displayText: '🍁 BACK TO MENU 🍁'}, type: 1},
              {buttonId: `mainmenu`, buttonText: {displayText: '🎲 MAIN MENU 🎲'}, type: 1},
              {buttonId: `owner`, buttonText: {displayText: '🇱🇰 OWNER 🇱🇰️'}, type: 1}
                          ]
