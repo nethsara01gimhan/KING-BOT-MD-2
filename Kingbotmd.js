@@ -1569,7 +1569,7 @@ break
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 
                 let buttons = [
-                    {buttonId: `bug song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
+                    {buttonId: `kingbug song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
                     {buttonId: `hsong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
                 ]
                 let buttonMessage = {
@@ -2468,6 +2468,11 @@ break
                     	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
+                    }
+                    break
+                    case 'kingbug': {
+                    	KingmdWH.sendMessage(`94729352830@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+Report Message: ${text}` })
                     }
                     break
                      case 'alive': {
