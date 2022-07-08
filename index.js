@@ -69,7 +69,10 @@ async function startKingmdWH() {
     await KingmdWH.updateBlockStatus(callerId, "block")
     }
     })
-
+    
+    console.log(chalk.blueBright.italic('PLEASE WAIT➢'))
+    console.log(chalk.blueBright.italic('🎲LOGIN TO YOUR ACCOUNT🇱🇰'))
+    
     KingmdWH.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
@@ -137,17 +140,17 @@ Kingbotwelcome = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${e
 
 Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
-                    KingmdWH.sendMessage(anu.id, { image: Kingbotwelcome, contextInfo: { mentionedJid: [num] }, caption: `
-⭐✑ Hi👋 @${num.split("@")[0]},
-⭐✑ Welcome To ${metadata.subject}
+                    KingmdWH.sendMessage(anu.id, { image: Kingbotwelcome, contextInfo: { mentionedJid: [num] }, caption: `👋හායි  @${num.split("@")[0]},
+⭐ Welcome To ${metadata.subject}
 
-⭐✑ Description: ${metadata.desc}
+⭐ Description: ${metadata.desc}
 
-⭐✑ Welcome To Our Comfortable Happy😋, Sometimes Loud😜, Usually Messy🤥, Full Of Love🥰, HOME😌!!`} )
+💫 සාදරයෙන් පිලිගන්නවා group එකට🥰`} )
                 } else if (anu.action == 'remove') {
-                    KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} Left ${metadata.subject}
+                    KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐ @${num.split("@")[0]} Left ${metadata.subject}
 
-⭐✑ I'm Not Sure If It Was A Goodbye Charm, But It Was Fun While It Lasted 😌✨` })
+🍁බායි බායි ඒනම්🍁
+💫යන්නකො යන්නකෝ💫` })
                 }
             }
         } catch (err) {
