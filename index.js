@@ -69,7 +69,6 @@ async function startKingmdWH() {
     await KingmdWH.updateBlockStatus(callerId, "block")
     }
     })
-    
 
     KingmdWH.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
@@ -122,7 +121,7 @@ async function startKingmdWH() {
                 } catch {
                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
-    
+
                 //Get Profile Picture Group\\
                 try {
                     ppgroup = await KingmdWH.profilePictureUrl(anu.id, 'image')
@@ -138,8 +137,7 @@ Kingbotwelcome = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${e
 
 Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
-                
-                let buttons = [
+                    let buttons = [
                {buttonId: `command`, buttonText: {displayText: 'MENU'}, type: 1},
                {buttonId: `welcome`, buttonText: {displayText: 'WELCOME BRO'}, type: 1}
                 ]
@@ -152,11 +150,11 @@ Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${e
                     headerType: 4
                 }
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }   
-                } else if (anu.action == 'remove') {
+                
+                                     } else if (anu.action == 'remove') {
                     KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} Left ${metadata.subject}
 
-🍁බායි බායි ඒනම් යන්නකො යන්නකෝ🍃` })
+⭐✑ I'm Not Sure If It Was A Goodbye Charm, But It Was Fun While It Lasted 😌✨` })
                 }
             }
         } catch (err) {
