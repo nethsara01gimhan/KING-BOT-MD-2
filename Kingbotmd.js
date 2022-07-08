@@ -1605,7 +1605,6 @@ break
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
 	   break
-            }
             case 'public': {
                 if (!isCreator) return replay(`${mess.owner}`)
                 KingmdWH.public = true
