@@ -69,6 +69,8 @@ async function startKingmdWH() {
     await KingmdWH.updateBlockStatus(callerId, "block")
     }
     })
+    
+const plugindb = require('./plugins/sql/plugin');
 
     KingmdWH.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
@@ -80,7 +82,15 @@ async function startKingmdWH() {
         if (!KingmdWH.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         m = smsg(KingmdWH, mek, store)
-        require("./Kingbotmd")(KingmdWH, m, chatUpdate, store)
+        var plugins = await plugindb.PluginDB.findAll();
+        plugins.map(async (plugin) => {
+            if (!fs.existsSync('./plugins/' + plugin.dataValues.name + '.js')) {
+                console.log(plugin.dataValues.name);
+                var response = await got(plugin.dataValues.url);
+                if (response.statusCode == 200) {
+                    fs.writeFileSync('./plugins/' + plugin.dataValues.name + '.js', response.body);
+                    require('./plugins/' + plugin.dataValues.name + '.js')(KingmdWH, m, chatUpdate, store)
+                } 
         } catch (err) {
             console.log(err)
         }
@@ -137,24 +147,11 @@ Kingbotwelcome = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${e
 
 Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
-                    let buttons = [
-               {buttonId: `command`, buttonText: {displayText: 'MENU'}, type: 1},
-               {buttonId: `welcome`, buttonText: {displayText: 'WELCOME BRO'}, type: 1}
-                ]
-                
-                let buttonMessage = {
-                    image: Kingbotwelcome,
-                    caption: `🙋‍♂️හායි  @${num.split("@")[0]},\n\n💫 සාදරයෙන් පිලිගන්නවා *${metadata.subject}* group එකට🥰\n\n🍁 Description ➢ ${metadata.desc}\n\n`,
-                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                
-                KingmdWH.sendMessage(anu.id, buttonMessage, mentionedJid: [num] } )
-                     } else if (anu.action == 'remove') {
+                    KingmdWH.sendMessage(anu.id, { image: Kingbotwelcome, contextInfo: { mentionedJid: [num] }, caption: `🙋‍♂️හායි  @${num.split("@")[0]},\n\n💫 සාදරයෙන් පිලිගන්නවා *${metadata.subject}* group එකට🥰\n\n🍁 Description ➢ ${metadata.desc}\n\n`} )
+                } else if (anu.action == 'remove') {
                     KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} Left ${metadata.subject}
 
-⭐✑ I'm Not Sure If It Was A Goodbye Charm, But It Was Fun While It Lasted 😌✨` })
+🍁බායි බායි ඒනම් යන්නකො යන්නකෝ🍃` })
                 }
             }
         } catch (err) {
