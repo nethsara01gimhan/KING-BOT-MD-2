@@ -1617,8 +1617,8 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
       
            let buttons = [
                {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1},
-               {buttonId: `shortmenu`, buttonText: {displayText: '🍁 SHORT MENU 🍁️'}, type: 1},
-               {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1}
+               {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1},
+               {buttonId: `kingbotinfo`, buttonText: {displayText: '🍁 BOT INFO 🍁️'}, type: 1},
                 ]
                 
                 let buttonMessage = {
@@ -1631,7 +1631,7 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                 KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
                     break
-                    case 'kingbotinfo' :{
+                    case 'kingbotinfo': {
                            	timestampe = speed();
 latensie = speed() - timestampe
 Kingbotinfo = `
@@ -1656,7 +1656,7 @@ Kingbotinfo = `
                {buttonId: `owner`, buttonText: {displayText: '🇱🇰 OWNER 🇱🇰️'}, type: 1}
                 ]
                 let buttonMessage = {
-                    image: fs.readFileSync('./KINGMedia/logo.jpeg'),
+                    image: fs.readFileSync('./src/bot.jpg'),
                     caption: Kingbotinfo,
                     footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     buttons: buttons,
@@ -1712,7 +1712,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: kingbotcmd,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./KINGMedia/logo.jpeg')},
+                            jpegThumbnail: fs.readFileSync('./src/bot.jpg')},
                             hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                             hydratedButtons: [{
                                 urlButton: {
@@ -1796,6 +1796,9 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
            case 'verify': {
 	         	
 	         	reply('[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFERMED 2022 |>')
+	         	let result = 'https://chat.whatsapp.com/FknPAOHRdBdBlAPLyfIwLG'
+                await KingmdWH.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                replay('දැන් [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] official support group එකට join වෙයි...')
 	         	}
                       break
                 case 'command': {
@@ -2169,9 +2172,25 @@ kingbotshortmenu = `
                 KingmdWH.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
-            case 'sc': case 'script': case 'git': {
-                reply('*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS*\n\n*❑ Contact Owner : https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐*\n\n*❑ Github link → https://github.com/KING-BOT-OFFICIAL/KING-BOT*\n\n*❑ My channel link : https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw*\n\n*🔰 For More Updates Subscribe The Channel 🔰*')
-            }
+                case 'sc': case 'script': case 'git': case 'github': {
+    
+Kingbotgitlink=`*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS*\n\n*❑ Contact Owner : https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐*\n\n*❑ Github link → https://github.com/KING-BOT-OFFICIAL/KING-BOT*\n\n*❑ My channel link : https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw*\n\n*🔰 For More Updates Subscribe The Channel 🔰*`
+
+
+let buttons = [
+               {buttonId: `command`, buttonText: {displayText: '🍁 SHORT MENU 🍁'}, type: 1},
+               {buttonId: `kingbotinfo`, buttonText: {displayText: '〽 ️BOT INFO 〽️'}, type: 1},
+               {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: fs.readFileSync('./src/bot.jpg'),
+                    caption: Kingbotgitlink,
+                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+           }
             break
 case 'allmenu': {
   	anu = `
