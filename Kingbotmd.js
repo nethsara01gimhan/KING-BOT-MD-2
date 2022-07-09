@@ -1476,16 +1476,16 @@ break
             }
             break
             
-         case 'hsong':  {
+                case 'hsong':  {
                 let { yta } = require('./lib/y2mate')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-               
-  let buttons = [
-             {buttonId: `bug h song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
-             {buttonId: `hsong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
+                
+                let buttons = [
+                    {buttonId: `kingbug song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
+                    {buttonId: `hsong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: media.thumb },
@@ -1511,24 +1511,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-   let buttons = [
-               {buttonId: `bug m song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
-               {buttonId: `msong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
-                let buttonMessage = {
-                    image: { url: media.thumb },
-                    caption: `
-╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉
-│▣ Title : ${media.title}
-│▣ File Size : ${media.filesizeF}
-│▣ Resolution : ${args[1] || '128kbps'}
-│
-│🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁
-╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉`,
-                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+                KingmdWH.sendImage(m.chat, media.thumb, `🔥 Title : ${media.title}\n🔥 File Size : ${media.filesizeF}\n🔥 Url : ${isUrl(text)}\n🔥 Ext : MP3\n🔥 Resolution : ${args[1] || '320kbps'}`, m)
                 KingmdWH.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
