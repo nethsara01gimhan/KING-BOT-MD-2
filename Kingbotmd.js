@@ -197,7 +197,8 @@ module.exports = KingmdWH = async (KingmdWH, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
-	
+
+                
 	//group target \\
 const reply = (teks) => {
             KingmdWH.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./KINGMedia/logo.jpeg`),"sourceUrl": "https://telegra.ph/file/24b9b8507613125d34bd1.jpgo"}}}, { quoted: m})
@@ -569,6 +570,15 @@ In ${clockString(new Date - user.afkTime)}
             user.afkTime = -1
             user.afkReason = ''
         }
+        
+//react function
+const reactionMessage = {
+                    react: {
+                        text: args[0],
+                        key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                    }
+                }
+                
 switch(command) {
 	    case 'afk': {
                 let user = global.db.data.users[m.sender]
@@ -774,6 +784,37 @@ Type *surrender* to surrender and admit defeat`
                 let media = await KingmdWH.downloadAndSaveMediaMessage(quoted)
                 await KingmdWH.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
+                }
+                break
+                case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'squirrel':
+                try {
+                let set
+                if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
+                if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
+                if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
+                if (/earrape/.test(command)) set = '-af volume=12'
+                if (/fast/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
+                if (/fat/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
+                if (/nightcore/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
+                if (/reverse/.test(command)) set = '-filter_complex "areverse"'
+                if (/robot/.test(command)) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
+                if (/slow/.test(command)) set = '-filter:a "atempo=0.7,asetrate=44100"'
+                if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
+                if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
+                if (/audio/.test(mime)) {
+                reply(mess.wait)
+                let media = await KingmdWH.downloadAndSaveMediaMessage(quoted)
+                let ran = getRandom('.mp3')
+                exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                fs.unlinkSync(media)
+                if (err) return reply(err)
+                let buff = fs.readFileSync(ran)
+                KingmdWH.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                fs.unlinkSync(ran)
+                })
+                } else reply(`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
+                } catch (e) {
+                reply(e)
                 }
                 break
             case 'tagall': {
@@ -1594,6 +1635,9 @@ Report Message: ${text}` })
                     }
                     break
                      case 'alive': {
+                     
+                     KingmdWH.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
+                     
 Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                    ✦𝙷𝙸 𝚃𝙷𝙴𝚁𝙴,࿐
             ꧁°•ɪ ᴀᴍ ᴀʟɪᴠᴇ ɴᴏᴡ•°꧂
@@ -1796,10 +1840,15 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
            case 'verify': {
 	         	
 	         	reply('[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CONFERMED 2022 |>')
-	         	let result = 'https://chat.whatsapp.com/FknPAOHRdBdBlAPLyfIwLG'
+	         	}
+	         	
+	       break 
+	       case 'kingjoinsupportgroupnowok': {
+	       
+	       let result = 'https://chat.whatsapp.com/FknPAOHRdBdBlAPLyfIwLG'
                 await KingmdWH.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 replay('දැන් [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] official support group එකට join වෙයි...')
-	         	}
+	                            }
                       break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -1848,11 +1897,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}groupmenu`
 										},
 									{
-										"title": "ʀᴘɢ ᴍᴇɴᴜ",
-										"description": "Displays The List Of Rpg Features",
-										"rowId": `${prefix}rpgmenu`
-									},
-									{
 										"title": "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Download Features",
 										"rowId": `${prefix}downloadmenu`
@@ -1862,20 +1906,10 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"description": "Displays The List Of Searching Features",
 										"rowId": `${prefix}searchmenu`
 									},
-									{
-											"title": "ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ",
-										"description": "Displays The List Of Random Features",
-										"rowId": `${prefix}randommenu`
-										},
 										{
 											"title": "ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Convert Features",
 										"rowId": `${prefix}convertmenu`
-										},
-										{
-											"title": "ᴅᴀᴛᴀʙᴀꜱᴇ ᴍᴇɴᴜ",
-										"description": "Displays The List Of Database Features",
-										"rowId": `${prefix}databasemenu`
 										},
 										{
 											"title": "ᴠᴏɪᴄᴇ ᴄʜᴀɴɢᴇʀ ᴍᴇɴᴜ",
@@ -1887,16 +1921,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"description": "Displays The List Of Textpro Features",
 										"rowId": `${prefix}textpromenu`
 										},
-										{
-											"title": "ɪꜱʟᴀᴍɪᴄ ᴍᴇɴᴜ",
-										"description": "Displays The List Of Islamic Features",
-										"rowId": `${prefix}islamicmenu`
-										},
-										{
-											"title": "ʜᴏʀᴏꜱᴄᴏᴘᴇ ᴍᴇɴᴜ",
-										"description": "Displays The List Of Horoscope Features",
-										"rowId": `${prefix}horoscopemenu`
-										}
 								]
 							},
 							{
@@ -2178,7 +2202,7 @@ Kingbotgitlink=`*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ
 
 
 let buttons = [
-               {buttonId: `command`, buttonText: {displayText: '🍁 SHORT MENU 🍁'}, type: 1},
+               {buttonId: `shortmenu`, buttonText: {displayText: '🍁 SHORT MENU 🍁'}, type: 1},
                {buttonId: `kingbotinfo`, buttonText: {displayText: '〽 ️BOT INFO 〽️'}, type: 1},
                {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1}
                 ]
@@ -2204,9 +2228,6 @@ case 'allmenu': {
 ┃╠ ${prefix}menu
 ┃╠ ${prefix}delete
 ┃╠ ${prefix}chatinfo
-┃╠ ${prefix}quoted
-┃╠ ${prefix}listpc
-┃╠ ${prefix}listgc
 ┃╠ ${prefix}donate
 ┃╠ ${prefix}report [bug]
 ┃╠══✪「 OWNER 」 ☯︎
@@ -2240,41 +2261,16 @@ case 'allmenu': {
 ┃╠${prefix}upvote
 ┃╠${prefix}checkvote
 ┃╠${prefix}delvote
-┃╠══☯︎「 RPG 」 ☯︎
-┃╠${prefix}hunting
-┃╠${prefix}mining
-┃╠${prefix}heal
-┃╠${prefix}userlimit
-┃╠${prefix}profile
-┃╠${prefix}inventory
-┃╠${prefix}leaderboard
-┃╠${prefix}buy [option]
-┃╠${prefix}sell [option]
-┃
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
 ┃╠${prefix}ytmp4 [url|quality]
 ┃╠${prefix}getmusic [yt link]
 ┃╠${prefix}getvideo [yt link]
-┃╠${prefix}umma [query]
-┃╠${prefix}joox [query]
-┃╠${prefix}soundcloud [url]
 ┃╠══✪「 SEARCHER 」 ☯︎
 ┃╠${prefix}play [query]
 ┃╠${prefix}song [query]
 ┃╠${prefix}yts [query]
-┃╠${prefix}google [query]
-┃╠${prefix}gimage [query]
-┃╠${prefix}pinterest [query]
-┃╠${prefix}wallpaper [query]
-┃╠${prefix}wikimedia [query]
-┃╠${prefix}ytsearch [query]
-┃╠${prefix}ringtone [query]
-┃╠${prefix}webtoon [query]
-┃╠══✪「 RANDOM 」☯︎
-┃╠${prefix}coffee
-┃╠${prefix}animequote (indo)
-┃╠${prefix}couplepp
+┃╠${prefix}img [query]
 ┃╠═══✪「 CONVERTER 」 ☯︎
 ┃╠ ${prefix}toimage [reply stick]
 ┃╠ ${prefix}sticker [reply img|gif]
@@ -2288,20 +2284,6 @@ case 'allmenu': {
 ┃╠ ${prefix}ebinary [reply txt]
 ┃╠ ${prefix}dbinary [reply txt]
 ┃╠ ${prefix}styletext [text]
-┃╠══✪「 DATABASE 」 ☯︎
-┃╠ ${prefix}setcmd
-┃╠ ${prefix}listcmd
-┃╠ ${prefix}delcmd
-┃╠ ${prefix}lockcmd
-┃╠ ${prefix}addmsg
-┃╠ ${prefix}listmsg
-┃╠ ${prefix}getmsg
-┃╠ ${prefix}delmsg
-┃╠═✪「 ANONYMOUS CHAT 」☯︎
-┃╠${prefix}anonymous
-┃╠${prefix}start
-┃╠${prefix}next
-┃╠${prefix}leave
 ┃╠═✪「 VOICE CHANGER 」☯︎
 ┃╠${prefix}bass [reply aud]
 ┃╠${prefix}blown [reply aud]
@@ -2314,40 +2296,7 @@ case 'allmenu': {
 ┃╠${prefix}robot [reply aud]
 ┃╠${prefix}slow [reply aud]
 ┃╠${prefix}squirrel [reply aud]
-┃╠══✪「 ISLAMIC 」☯︎
-┃╠${prefix}juzamma
-┃╠══✪「 HOROSCOPE 」☯︎
-┃╠${prefix}nomorhoki (indo)
-┃╠${prefix}artimimpi (indo)
-┃╠${prefix}artinama (indo)
-┃╠${prefix}ramaljodoh (indo)
-┃╠${prefix}ramaljodohbali (indo)
-┃╠${prefix}suamiistri (indo)
-┃╠${prefix}ramalcinta (indo)
-┃╠${prefix}cocoknama (indo)
-┃╠${prefix}pasangan (indo)
-┃╠${prefix}jadiannikah (indo)
-┃╠${prefix}sifatusaha (indo)
-┃╠${prefix}rezeki (indo)
-┃╠${prefix}pekerjaan (indo)
-┃╠${prefix}nasib (indo)
-┃╠${prefix}penyakit (indo)
-┃╠${prefix}tarot (indo)
-┃╠${prefix}fengshui (indo)
-┃╠${prefix}haribaik (indo)
-┃╠${prefix}harisangar (indo)
-┃╠${prefix}harisial (indo)
-┃╠${prefix}nagahari (indo)
-┃╠${prefix}arahrezeki (indo)
-┃╠${prefix}peruntungan (indo)
-┃╠${prefix}weton (indo)
-┃╠${prefix}karakter (indo)
-┃╠${prefix}keberuntungan (indo)
-┃╠${prefix}memancing (indo)
-┃╠${prefix}masasubur (indo)
-┃╠${prefix}zodiak (indo)
-┃╠${prefix}shio (indo)
-┃╚═════ШHłТΞ HΛϾКΞЯS════
+┃╚═════ШHłТΞ HΛϾКΞЯS═
 ┗━「 *Created By ${ownername}* 」━⭓`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
@@ -2430,24 +2379,6 @@ await KingmdWH.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}upvote
 ┃╠${prefix}checkvote
 ┃╠${prefix}delvote
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
-break
-
-case 'rpgmenu':
-var unicorn = await getBuffer(picak+'Rpg Menu')
-await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═✪「 RPG 」	        
-┃╠${prefix}hunting
-┃╠${prefix}mining
-┃╠${prefix}heal
-┃╠${prefix}limituser
-┃╠${prefix}profile
-┃╠${prefix}inventory
-┃╠${prefix}leaderboard
-┃╠${prefix}buy [option]
-┃╠${prefix}sell [option]
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
 break
@@ -2582,43 +2513,6 @@ await KingmdWH.send5ButImg(from, `` + '' + ' ', `
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
 break
-case 'databasemenu':
-var unicorn = await getBuffer(picak+'Database Menu')
-await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═══✪「 DATABASE 」	        
-┃╠ ${prefix}setcmd
-┃╠ ${prefix}listcmd
-┃╠ ${prefix}delcmd
-┃╠ ${prefix}lockcmd
-┃╠ ${prefix}addmsg
-┃╠ ${prefix}listmsg
-┃╠ ${prefix}getmsg
-┃╠ ${prefix}delmsg
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
-break
-case 'databasemenu':
-var unicorn = await getBuffer(picak+'Database Menu')
-await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔══✪「 ANONYMOUS CHAT 」	        
-┃╠${prefix}anonymous
-┃╠${prefix}start
-┃╠${prefix}next
-┃╠${prefix}leave
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
-break
-case 'islamicmenu':
-var unicorn = await getBuffer(picak+'Islamic Menu')
-await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔══✪「 ISLAMIC 」	        
-┃╠${prefix}juzamma
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
-break
 case 'voicechangermenu':
 var unicorn = await getBuffer(picak+'Voice Changer Menu')
 await KingmdWH.send5ButImg(from, `` + '' + ' ', `
@@ -2635,44 +2529,6 @@ await KingmdWH.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}robot [reply aud]
 ┃╠${prefix}slow [reply aud]
 ┃╠${prefix}squirrel [reply aud]
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
-break
-case 'horoscopemenu':
-var unicorn = await getBuffer(picak+'Horoscope Menu')
-await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔══✪「 HOROSCOPE 」	        
-┃╠${prefix}nomorhoki (indo)
-┃╠${prefix}artimimpi (indo)
-┃╠${prefix}artinama (indo)
-┃╠${prefix}ramaljodoh (indo)
-┃╠${prefix}ramaljodohbali (indo)
-┃╠${prefix}suamiistri (indo)
-┃╠${prefix}ramalcinta (indo)
-┃╠${prefix}cocoknama (indo)
-┃╠${prefix}pasangan (indo)
-┃╠${prefix}jadiannikah (indo)
-┃╠${prefix}sifatusaha (indo)
-┃╠${prefix}rezeki (indo)
-┃╠${prefix}pekerjaan (indo)
-┃╠${prefix}nasib (indo)
-┃╠${prefix}penyakit (indo)
-┃╠${prefix}tarot (indo)
-┃╠${prefix}fengshui (indo)
-┃╠${prefix}haribaik (indo)
-┃╠${prefix}harisangar (indo)
-┃╠${prefix}harisial (indo)
-┃╠${prefix}nagahari (indo)
-┃╠${prefix}arahrezeki (indo)
-┃╠${prefix}peruntungan (indo)
-┃╠${prefix}weton (indo)
-┃╠${prefix}karakter (indo)
-┃╠${prefix}keberuntungan (indo)
-┃╠${prefix}memancing (indo)
-┃╠${prefix}masasubur (indo)
-┃╠${prefix}zodiak (indo)
-┃╠${prefix}shio (indo)
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "🔥 GITHUB 🔥","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
 break
