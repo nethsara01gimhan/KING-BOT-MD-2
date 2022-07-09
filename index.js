@@ -149,7 +149,7 @@ Kingbotgoodbye = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${e
                     buttons: buttons,
                     headerType: 4
                 }
-                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+                KingmdWH.sendMessage(anu.id, buttonMessage, { quoted: m })
                 
                                      } else if (anu.action == 'remove') {
                     KingmdWH.sendMessage(anu.id, { image: Kingbotgoodbye, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} Left ${metadata.subject}
