@@ -1476,16 +1476,16 @@ break
             }
             break
             
-                case 'hsong':  {
+         case 'hsong':  {
                 let { yta } = require('./lib/y2mate')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                
-                let buttons = [
-                    {buttonId: `kingbug song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
-                    {buttonId: `hsong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
+               
+  let buttons = [
+             {buttonId: `bug h song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
+             {buttonId: `hsong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: media.thumb },
@@ -1493,8 +1493,6 @@ break
 ╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉
 │▣ Title : ${media.title}
 │▣ File Size : ${media.filesizeF}
-│▣ Url : ${isUrl(text)}
-│▣ Ext : MP3
 │▣ Resolution : ${args[1] || '320kbps'}
 │
 │🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁
@@ -1513,7 +1511,24 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                KingmdWH.sendImage(m.chat, media.thumb, `🔥 Title : ${media.title}\n🔥 File Size : ${media.filesizeF}\n🔥 Url : ${isUrl(text)}\n🔥 Ext : MP3\n🔥 Resolution : ${args[1] || '320kbps'}`, m)
+   let buttons = [
+               {buttonId: `bug m song thank you!`, buttonText: {displayText: '✨ THANK YOU ✨'}, type: 1},
+               {buttonId: `msong ${isUrl(text)}`, buttonText: {displayText: '🍁 DOWNLOAD AGAIN 🍁'}, type: 1}
+                let buttonMessage = {
+                    image: { url: media.thumb },
+                    caption: `
+╭╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉
+│▣ Title : ${media.title}
+│▣ File Size : ${media.filesizeF}
+│▣ Resolution : ${args[1] || '128kbps'}
+│
+│🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁
+╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉`,
+                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </> ▷',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
                 KingmdWH.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -1636,7 +1651,7 @@ Report Message: ${text}` })
                     break
                      case 'alive': {
                      
-                     KingmdWH.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
+          KingmdWH.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
                      
 Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
                    ✦𝙷𝙸 𝚃𝙷𝙴𝚁𝙴,࿐
@@ -1751,44 +1766,20 @@ kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧�
   🍁𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗼𝗿 𝗰𝗵𝗼𝗼𝘀𝗶𝗻𝗴🍁
            🔥❝𝗞𝗜𝗡𝗚 𝗕𝗢𝗧❞🔥`
 
-const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: kingbotcmd,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./src/bot.jpg')},
-                            hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: '🔥 YOUTUBE 🔥',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                            	urlButton: {
-                                displayText: '🔥 GITHUB 🔥',
-                                    url: `${sc}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '🎭 LIST MENU 🎭',
-                                    id: `${prefix}command`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '⚙️️ SYSTEM STATUS ⚙️',
-                                    id: `${prefix}ping`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '🇱🇰 OWNER 🇱🇰',
-                                    id: `${prefix}owner`
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat })
-                KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
+let buttons = [
+               {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1},
+               {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1},
+               {buttonId: `owner`, buttonText: {displayText: '🇱🇰 OWNER 🇱🇰️'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: fs.readFileSync('./src/bot.jpg'),
+                    caption: kingbotcmd,
+                    footer: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
+                    buttons: buttons,
+                    headerType: 4
                 }
+                KingmdWH.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
 break
             case 'list': case 'menu': case 'panel': case 'help' :{
             	timestampe = speed();
