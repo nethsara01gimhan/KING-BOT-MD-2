@@ -244,7 +244,7 @@ const reply = (teks) => {
 	  //antilink\\
         if (db.data.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        reply(`*☡「 ANTI LINK 」☡*\n\n⌛ You have been detected sending a group link, sorry you will be kicked !👿`)
+        reply(`*⚠️「 ANTI LINK 」⚠️*\n\n⌛ You have been detected sending a group link, sorry you will be kicked !👿`)
         if (!isBotAdmins) return reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         let gclink = (`https://chat.whatsapp.com/`+await KingmdWH.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
@@ -1497,7 +1497,7 @@ break
 │▣ File Size : ${media.filesizeF}
 │▣ Resolution : ${args[1] || '320kbps'}
 │
-│_*I am Uploading your song*_ ✨➾🎲
+│*I am Uploading your song* ✨➾🎲
 │
 │🍁ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ ₂₀₂₂🍁
 ╰╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶◉`,
@@ -1668,7 +1668,7 @@ Kingbotalive = `──┈┈┈┄┄╌╌╌╌┄┄┈┈┈──
            let buttons = [
                {buttonId: `command`, buttonText: {displayText: '🎭 LIST MENU 🎭'}, type: 1},
                {buttonId: `ping`, buttonText: {displayText: '🎲 SYSTEM STATUS 🎲'}, type: 1},
-               {buttonId: `kingbotinfo`, buttonText: {displayText: '🍁 BOT INFO 🍁️'}, type: 1},
+               {buttonId: `kingbotinfo`, buttonText: {displayText: '🍁 BOT SYSTEM 🍁️'}, type: 1},
                 ]
                 
                 let buttonMessage = {
@@ -1741,7 +1741,6 @@ kingbotcmd = `╹ 𓄂᳆⃞⃚😈×͜×[🇱🇰㉿𝗜𝗡𝗚 𝗕𝗢𝗧�
 │🔰✨️ ɪɴᴜᴋᴀ     ✨️ ᭄
 │🔰✨️ ᴘʀᴀᴠᴇᴇɴ  ✨️ ᭄
 │🔰✨️ ᴅɪʟꜱʜᴀɴ  ✨️ ᭄
-│🔰✨️ ɴɪʟᴜᴘᴜʟ  ✨️ ᭄
 │     ◉ ʙᴏᴛ ᴛᴇꜱᴛᴇʀ
 │      
 │🔰✨️ ᴍᴀʟɪᴛʜᴀ  ✨️ ᭄
@@ -1774,9 +1773,8 @@ let buttons = [
             }
 break
             case 'list': case 'menu': case 'panel': case 'help' :{
-            	timestampe = speed();
-latensie = speed() - timestampe
-                anu = `┏━━━━━━━━━━━━━━━┓
+
+kingmenu = `┏━━━━━━━━━━━━━━━┓
 ┃       [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] - MD        ┃
 ┗━━━━━━━━━━━━━━━┛
 
@@ -1784,7 +1782,7 @@ THIS IS [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] CMD MENU`
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
-                            hydratedContentText: anu,
+                            hydratedContentText: kingmenu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./KINGMedia/logo.jpeg')}, 
                             hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
@@ -1826,9 +1824,74 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 	         	}
 	         	
 	       break 
+	       case 'team': {
+Teammsg=`
+👋 𝙷𝙴𝚈 𝙰𝙻𝙻
+🍁 𝙸 𝙰𝙼 𝙰 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝚄𝚂𝙴𝚁 𝙱𝙾𝚃 🍁
+🎭 𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 𝙺𝙸𝙽𝙶 𝙱𝙾𝚃 🎭
+
+
+👨‍💻️ ᴄʀᴇᴀᴛᴇᴅ ʙʏ      :: ᴡʜɪᴛᴇ ʜᴀᴄᴋᴇʀꜱ
+👨‍💻️ ᴠɪᴄᴇ ᴄᴀᴘᴛɪᴏɴ     :: ᴍʀ.ᴛɪᴍᴀ
+👨‍💻️ ᴠɪᴄᴇ ᴄᴏ ᴄᴀᴘᴛᴀɪɴ :: ꜱᴀɴᴜᴋᴀ
+
+
+✨ ᴛᴇᴀᴍ ᴀᴅᴍɪɴꜱ ✨
+        :: ᴍɪ.ᴛɪᴍᴀ
+        :: ꜱᴀɴᴜᴋᴀ
+        :: ᴍᴀʟɪᴛʜᴀ
+
+✨ ᴛᴇᴀᴍ ᴍᴇᴍʙᴇʀꜱ ✨
+        :: ɪɴᴜᴋᴀ
+        :: ᴘʀᴀᴠᴇᴇɴ
+        :: ᴜᴄʜɪᴛʜᴀ
+        :: ᴍʀ.ɴɪᴍᴀ
+        :: ᴅɪʟꜱʜᴀɴ
+
+
+🇱🇰️ ροωєяє∂ ϐγ κιиg οƒƒιϲιαℓ τєαм 🇱🇰`
+
+const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            hydratedContentText: Teammsg,
+                            locationMessage: {
+                            jpegThumbnail: fs.readFileSync('./KINGMedia/logo.jpeg')}, 
+                            hydratedFooterText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: '🔥 YOUTUBE 🔥',
+                                    url: `${myweb}`
+                                }
+                            }, {
+                            	urlButton: {
+                                displayText: '👨‍💻 GITHUB 👨‍💻',
+                                    url: `${sc}`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: '🎭 INFO BOT 🎭',
+                                    id: `${prefix}bot`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: '🍁 BOT SYSTEM 🍁',
+                                    id: `${prefix}kingbotinfo`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: '🇱🇰 OWNER 🇱🇰',
+                                    id: `${prefix}owner`
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat })
+                KingmdWH.relayMessage(m.chat, template.message, { messageId: template.key.id })
+	                   }
 	       case 'kingjoinsupportgroupnowok': {
 	       
-	       let result = 'https://chat.whatsapp.com/FknPAOHRdBdBlAPLyfIwLG'
+	       let result = `https://chat.whatsapp.com/FknPAOHRdBdBlAPLyfIwLG`
                 await KingmdWH.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 replay('දැන් [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] official support group එකට join වෙයි...')
 	                            }
@@ -1947,7 +2010,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             
 Kingbotehimenu = `🔥ᏦᏆΝᏀ ᏴϴͲ ᎬᎻᏆ ᏟϴᏞᏞᎬᏟͲᏆϴΝ🔥
 
-🛑 ᴘᴏᴡᴇʀᴇᴅ ʙʏ ::: κιиg οƒƒιϲιαℓ τєαм
+🛑 ᴘᴏᴡᴇʀᴇᴅ ʙʏ :: κιиg οƒƒιϲιαℓ τєαм
 
 
 ❌𝙽𝙾 𝚂𝙿𝙰𝙼
@@ -1981,12 +2044,10 @@ Kingbotehimenu = `🔥ᏦᏆΝᏀ ᏴϴͲ ᎬᎻᏆ ᏟϴᏞᏞᎬᏟͲᏆϴΝ�
    🔰 ᴀɴʏ ɴᴇᴛꜰʟɪx - .nfehi
    🔰 ᴀɴʏ ɪᴍᴏ - .iehi
 
-
    🎲 𝙷𝚄𝚃𝙲𝙷 0 - .h0ehi
    🎲 𝙳𝙸𝙰𝙻𝙾𝙶 0 - .d0ehi
    🎲 𝙰𝙸𝚁𝚃𝙴𝙻 0 - .a0ehi
    🎲 𝙼𝙾𝙱𝙸𝚃𝙴𝙻 0 - .m0ehi
-
 
    💠 ᎪᏞᏞ ᎬᎻᏆ ҒᏆᏞᎬՏ - .allehi
    
@@ -2181,7 +2242,18 @@ kingbotshortmenu = `
             break
                 case 'sc': case 'script': case 'git': case 'github': {
     
-Kingbotgitlink=`*[🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS*\n\n*❑ Contact Owner : https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐*\n\n*❑ Github link → https://github.com/KING-BOT-OFFICIAL/KING-BOT*\n\n*❑ My channel link : https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw*\n\n*🔰 For More Updates Subscribe The Channel 🔰*`
+Kingbotgitlink=`*🎭 [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] created by ШHłТΞ HΛϾКΞЯS 🎭*
+
+*🍁 Contact Owner :: https://wa.me/94729352830?text=HI......%20𝚱𝚰𝚴Ｇ%20𝛃𝚯𝚪%20OWNER࿐*
+
+*🍁 Github link :: https://github.com/KING-BOT-OFFICIAL/KING-BOT-MD*
+
+🍁Checkpoint Group Link ::https://chat.whatsapp.com/KNXP4fcK8ehJsdPlsM97wr
+
+*🍁 My channel link :: https://youtube.com/channel/UCgwWV1Cya4_gUFKYOQYQtHw*
+
+
+*🔰 For More Updates Subscribe The Channel 🔰*`
 
 
 let buttons = [
@@ -2518,10 +2590,10 @@ break
 case 'thanksto': case 'tqto': case 'tqtt':
 var unicorn = await getBuffer(picak+'Developer')
 await KingmdWH.send5ButImg(from, `` + '' + ' ', `
-Thanks to Me ( whitehackers)
-Alien-Alfa (For helping me to deploy qr in replit and answered my every doubts regard this project)
-DGXeon ( 45% Credits goes to him ,in this script)
-And Again Me (King Nexus ) 🔥 Who Helped Assemble This Sexy Script !!!`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "👨‍💻 GITHUB 👨‍💻","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
+🎭𝙸 𝙰𝙼 𝙺𝙸𝙽𝙶 𝙱𝙾𝚃 𝙼𝙳 𝚅𝙴𝚁𝚂𝙸𝙾𝙽🎭
+
+තව ගැහුවෙ නෑ.
+`,unicorn, [{"urlButton": {"displayText": "🔥 YOUTUBE 🔥","url": `${myweb}`}},{"urlButton": {"displayText": "👨‍💻 GITHUB 👨‍💻","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "🇱🇰 OWNER 🇱🇰","id": 'owner'}}] )
 break
             default:
                 if (budy.startsWith('=>')) {
