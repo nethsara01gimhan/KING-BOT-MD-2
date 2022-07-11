@@ -1896,11 +1896,11 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 replay('දැන් [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] official support group එකට join වෙයි...')
 	                            }
                       break
-                case 'command': {
+                case 'menu': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `┏━━━━━━━━━━━━━━━━━`,
-                    description: `┣👋ʜɪ ᴅᴇᴀʀ ${pushname},\n┃\n┣ 𝙸 𝙰𝙼 [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘]\n┣🎭𝙰 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝚄𝚂𝙴𝚁 𝙱𝙾𝚃🎭\!┃\n┣ 🍁ᴄʜᴏᴏꜱᴇ ᴛʜᴇ ᴍᴇɴᴜ🍁\n┗━━━━━━━━━━━━━━━━━\n\n*🎲 THIS IS [🇱🇰𝚱𝚰𝚴Ｇ 𝛃𝚯𝚪🤘] MENU LIST*\n`,
+                    description: `┣👋ʜɪ ᴅᴇᴀʀ ${pushname},\n┃\n┣ ɪ ᴀᴍ ᴍʀ.ᴛɪᴍᴀ\n┣ᴀ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ\!┃\n┣ 🍁ᴄʜᴏᴏꜱᴇ ᴛʜᴇ ᴍᴇɴᴜ🍁\n┗━━━━━━━━━━━━━━━━━\n\n*🎲 THIS IS MR.TIMA BOT MENU LIST*\n`,
                     buttonText: "ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ꜱᴇʟᴇᴄᴛ ᴍᴇɴᴜ",
                     footerText: '</> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋɪɴɢ ʙᴏᴛ </>️ ▷',
                     listType: "SINGLE_SELECT",
